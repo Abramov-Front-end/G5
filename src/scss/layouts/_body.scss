@@ -1,0 +1,31 @@
+$sm:  540px;
+$md:  768px;
+$lg:  1024px;
+
+body {
+	font-family: $font-family;
+	font-style: normal;
+	font-weight: $font-weight_regular;
+	font-size: $font-size;
+	color: $color_text;
+	
+	@media (max-width: $sm) {
+		font-size: $font-size-sm;
+		line-height: $line-height-sm;
+	}
+}
+
+b,
+strong {
+	font-weight: $font-weight_bold;
+}
+
+i,
+em {
+	font-style: italic;
+}
+
+a {
+	text-decoration: none;
+	color: $color_text;
+}
