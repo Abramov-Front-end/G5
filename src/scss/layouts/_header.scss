@@ -1,0 +1,67 @@
+.header {
+  background: url(../images/bg-main.png) center -135px / cover no-repeat;
+
+  &__inner {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1440px;
+    padding: 60px $guuter_default 120px;
+    position: relative;
+
+    &:before {
+      content: '';
+      display: block;
+      width: 362px;
+      height: 531px;
+      background: url(../images/girl.png) center top / 100% auto no-repeat;
+      position: absolute;
+      bottom: 46px;
+      left: 88px;
+      z-index: 1;
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      width: 394px;
+      height: 284px;
+      background: url(../images/chips.png) center center / 100% 100% no-repeat;
+      position: absolute;
+      right: 49px;
+      bottom: 146px;
+    }
+  }
+
+  &__logo {
+    display: block;
+    margin-bottom: 100px;
+    width: 409px;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .btn {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__description {
+    display: block;
+    margin-top: 116px;
+    font-size: 40px;
+    font-weight: $font-weight_medium;
+    color: white;
+    line-height: 44px;
+    text-shadow: 0 2px 2px $black;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+}
