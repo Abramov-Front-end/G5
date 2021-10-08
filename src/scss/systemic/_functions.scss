@@ -1,0 +1,25 @@
+
+//Get Ratio image with shadow and without shadow
+@function getRatio($design_width, $img_width, $design_height, $img_height){
+  @return (
+    width: ($img_width - $design_width ) / $design_width,
+    height: ($img_height - $design_height) / $design_height,
+  )
+}
+
+//Calculate width, height and position
+@function getImgProps($width, $height, $position, $ratio) {
+  $props: (
+          width: $width + $width * map-get($ratio, width) + 'px',
+          height: $height + $height * map-get($ratio, height) + 'px',
+  );
+  @each $prop, $value in $position {
+    @if $prop == left or $prop == right {
+      $props: map-merge( $props, (#{$prop}: $value - $width * map-get($ratio, width)/2 + 'px'))
+    } @else {
+      $props: map-merge( $props, (#{$prop}: $value - $height * map-get($ratio, width)/2 + 'px'))
+    }
+  }
+
+  @return $props
+}

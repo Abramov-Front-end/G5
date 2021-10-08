@@ -1,0 +1,311 @@
+.section {
+  margin-top: -40px;
+  border-radius: 40px 40px 0 0;
+  background: $bg_section;
+  position: relative;
+
+  &__inner {
+    margin: 0 auto;
+    padding: 80px $gutter_default 120px;
+    width: 100%;
+    max-width: 1110px+ $gutter_default*2;
+
+    @media (max-width: $lg) {
+      padding: 60px $gutter_default 100px;
+    }
+
+    @media (max-width: $md) {
+      padding: 40px $gutter_sm 80px;
+    }
+  }
+
+  //Video Section
+  &__video {
+    background-image: url(../images/bg-section.svg);
+    background-size: cover;
+    background-position: center 8px;
+    background-repeat: no-repeat;
+
+    h2 {
+      margin-bottom: 64px;
+      font-size: 28px;
+      font-weight: $font-weight_medium;
+      line-height: 44px;
+      text-align: center;
+
+      @media (max-width: $lg) {
+        margin-bottom: 32px;
+        font-size: 20px;
+        line-height: 32px;
+      }
+
+      @media (max-width: $md) {
+        margin-bottom: 12px;
+        font-size: 18px;
+        line-height: 28px;
+      }
+    }
+    &_block {
+      margin: 0 auto;
+      padding: 46px 66px 67px;
+      max-width: 877px;
+      background: url(../images/bg-video.svg) center center / 100% 100% no-repeat;
+      position: relative;
+
+      @media (max-width: $lg) {
+        max-width: 516px;
+        padding: 28px 38px 38px;
+      }
+
+      @media (max-width: $sm) {
+        max-width: 251px;
+        padding: 13px 19px 20px 20px;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+      }
+
+      &:before,
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+      }
+
+      &:before {
+        background: url(../images/vb_baloon.png) center center / 100% 100% no-repeat;
+
+        $baloon: getRatio(167, 199, 291, 323);
+
+        @each $prop, $value in getImgProps(167, 291, (top: 18, left: -122), $baloon) {
+          #{$prop}: #{$value};
+        }
+
+        @media (max-width: $lg) {
+          @each $prop, $value in getImgProps(102, 177, (top: 16, left: -73), $baloon) {
+            #{$prop}: #{$value};
+          }
+        }
+
+        @media (max-width: $sm) {
+          @each $prop, $value in getImgProps(50, 88, (top: 7, left: -34), $baloon) {
+            #{$prop}: #{$value};
+          }
+        }
+      }
+
+      &:after {
+        background: url(../images/vb_cats.png) center center / 100% 100% no-repeat;
+
+        $cats: getRatio(185, 201, 243, 259);
+
+        @each $prop, $value in getImgProps(185, 243, (bottom: -15, right: -141), $cats) {
+          #{$prop}: #{$value};
+        }
+
+        @media (max-width: $lg) {
+          @each $prop, $value in getImgProps(114, 149, (bottom: -24, right: -54), $cats) {
+            #{$prop}: #{$value};
+          }
+        }
+
+        @media (max-width: $sm) {
+          @each $prop, $value in getImgProps(55, 73, (bottom: -13, right: -22), $cats) {
+            #{$prop}: #{$value};
+          }
+        }
+      }
+
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  //Gif block
+  &__gif {
+    background: url(../images/bg-gif.png) center -80px/100% auto no-repeat;
+
+    @media (max-width: $xl) {
+      background-size: 1719px auto;
+      background-position: center -40px;
+    }
+    @media (max-width: $sm) {
+      background-size: 1314px auto;
+      background-position: center top;
+    }
+
+    &__inner {
+      display: flex;
+      align-items: center;
+
+      @media (max-width: $lg) {
+        flex-direction: column;
+      }
+    }
+
+    &_img {
+      flex: 1 1 auto;
+      position: relative;
+
+      @media (max-width: $lg) {
+        margin-bottom: 40px;
+        max-width: 479px;
+      }
+
+      @media (max-width: $md) {
+        margin: 40px -9px;
+      }
+
+      &:before {
+        content: '';
+        display: block;
+        width: 243px;
+        height: 146px;
+        background: url(../images/gif_cloud-1.png) center center/100% 100% no-repeat;
+        position: absolute;
+        left: -150px;
+        top: -27px;
+
+        @media (max-width: $lg) {
+          width: 201px;
+          height: 121px;
+          left: -145px;
+          top: -24px;
+        }
+
+        @media (max-width: $md) {
+          width: 122px;
+          height: 73px;
+          left: 0;
+          top: -59px;
+        }
+      }
+
+      img {
+        display: block;
+        margin: -12px -15px;
+        max-width: 100%;
+        height: auto;
+
+        @media (max-width: $lg) {
+          margin: 0;
+        }
+      }
+    }
+
+    &_description {
+      flex: 0 0 auto;
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: center;
+      margin: 0 auto;
+      padding: 0 30px;
+      max-width: 100%;
+      text-align: center;
+      position: relative;
+
+      @media (max-width: $lg) {
+        position: static;
+      }
+
+      @media (max-width: $md) {
+        margin-bottom: 40px;
+      }
+
+      &:before {
+        content: '';
+        display: block;
+        width: 332px;
+        height: 157px;
+        background: url(../images/gif_cloud-2.png) center center/100% 100% no-repeat;
+        position: absolute;
+        right: -165px;
+        top: -35px;
+
+        @media (max-width: $lg) {
+          margin-top: -27px;
+          width: 263px;
+          height: 124px;
+          top: auto;
+          right: -87px;
+        }
+
+        @media (max-width: $md) {
+          width: 151px;
+          height: 71px;
+          margin-top: 0;
+          top: 6px;
+          right: -64px;
+        }
+      }
+
+      img {
+        display: block;
+        margin: -10px -10px 7px;
+        position: relative;
+        z-index: 1;
+      }
+
+      h2 {
+        margin-bottom: 8px;
+        font-size: 30px;
+        font-weight: $font-weight_bold;
+        line-height: 44px;
+
+        @media (max-width: $lg) {
+          font-size: 24px;
+          line-height: 36px;
+        }
+      }
+
+      p {
+        margin-bottom: 24px;
+        font-size: 24px;
+        line-height: 36px;
+        text-shadow: 0 4px 20px $white, 0 0 10px $white;
+
+        @media (max-width: $lg) {
+          font-size: 20px;
+          line-height: 32px;
+        }
+      }
+    }
+  }
+
+  //Fedbacks
+  &__feedback {
+    position: relative;
+
+    &:before {
+      content: '';
+      display: block;
+      width: 133px;
+      height: 147px;
+      background: url(../images/fb_clock.png) center center/100% 100% no-repeat;
+      transform: rotate(-15deg);
+      position: absolute;
+      top: -66px;
+      left: 59px;
+
+      @media (max-width: $lg) {
+        width: 100px;
+        height: 110px;
+        top: -57px;
+        left: 40px;
+      }
+
+      @media (max-width: $md) {
+        width: 74px;
+        height: 82px;
+        top: -50px;
+        left: 20px;
+      }
+    }
+  }
+}

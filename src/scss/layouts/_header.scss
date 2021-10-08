@@ -1,6 +1,15 @@
 .header {
   background: url(../images/bg-main.png) center -135px / cover no-repeat;
 
+  @media (max-width: $lg){
+    background-position: center top;
+    background-size: 100% auto;
+  }
+
+  @media (max-width: $md){
+    background-size: 768px auto;
+  }
+
   &__inner {
     display: flex;
     flex-flow: column nowrap;
@@ -8,30 +17,74 @@
     margin: 0 auto;
     width: 100%;
     max-width: 1440px;
-    padding: 60px $guuter_default 120px;
+    padding: 60px $gutter_default 100px;
     position: relative;
 
-    &:before {
-      content: '';
-      display: block;
-      width: 362px;
-      height: 531px;
-      background: url(../images/girl.png) center top / 100% auto no-repeat;
-      position: absolute;
-      bottom: 46px;
-      left: 88px;
-      z-index: 1;
+    @media (max-width: $lg){
+      padding: 40px $gutter_default 80px;
     }
 
+    @media (max-width: $md){
+      padding: 20px $gutter_sm 60px;
+    }
+    &:before,
     &:after {
       content: '';
       display: block;
+      position: absolute;
+    }
+
+    &:before {
+      background: url(../images/girl.png) center top / 100% auto no-repeat;
+      z-index: 1;
+
+      $girl: getRatio(362, 442, 531, 611);
+
+      @each $prop, $value in getImgProps(362, 531, (left: 88, bottom: 25), $girl) {
+        #{$prop}: #{$value};
+      }
+
+      @media (max-width: $xl){
+        @each $prop, $value in getImgProps(362, 531, (left: 0), $girl) {
+          #{$prop}: #{$value};
+        }
+      }
+
+      @media (max-width: $lg){
+        @each $prop, $value in getImgProps(259, 380, (left: 0, bottom: 30), $girl) {
+          #{$prop}: #{$value};
+        }
+      }
+
+      @media (max-width: $md){
+        @each $prop, $value in getImgProps(225, 330, (left: -31), $girl) {
+          #{$prop}: #{$value};
+        }
+      }
+    }
+
+    &:after {
       width: 394px;
       height: 284px;
       background: url(../images/chips.png) center center / 100% 100% no-repeat;
-      position: absolute;
       right: 49px;
       bottom: 146px;
+
+      @media (max-width: $xl){
+        right: 0;
+      }
+
+      @media (max-width: $lg){
+        width: 303px;
+        height: 218px;
+      }
+
+      @media (max-width: $md){
+        width: 233px;
+        height: 168px;
+        right: -22px;
+        bottom: 130px;
+      }
     }
   }
 
@@ -39,6 +92,16 @@
     display: block;
     margin-bottom: 100px;
     width: 409px;
+
+    @media (max-width: $lg){
+      margin-bottom: 123px;
+      width: 268px;
+    }
+
+    @media (max-width: $md){
+      margin-bottom: 192px;
+      width: 170px;
+    }
 
     img {
       display: block;
@@ -63,5 +126,16 @@
     text-align: center;
     position: relative;
     z-index: 2;
+
+    @media (max-width: $lg){
+      margin-top: 36px;
+      font-size: 28px;
+      line-height: 40px;
+    }
+
+    @media (max-width: $md){
+      margin-top: 16px;
+      font-size: 24px;
+    }
   }
 }
