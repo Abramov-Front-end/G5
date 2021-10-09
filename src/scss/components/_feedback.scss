@@ -1,0 +1,104 @@
+.author {
+
+  @media (max-width: $sm) {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+  }
+
+  &__photo {
+    display: flex;
+    margin-right: 30px;
+    width: 160px;
+    height: 160px;
+    overflow: hidden;
+    border-radius: 50%;
+    float: left;
+
+    @media (max-width: $lg) {
+      margin-right: 20px;
+      width: 100px;
+      height: 100px;
+    }
+
+    @media (max-width: $sm) {
+      margin: 0 0 8px;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &__assessment {
+    display: flex;
+    margin: -3px 0 10px;
+
+    @media (max-width: $lg) {
+      margin-bottom: 14px;
+    }
+
+    @media (max-width: $sm) {
+      justify-content: center;
+    }
+
+    span {
+      display: block;
+      flex: 0 1 49px;
+      height: 47px;
+      margin-left: -6px;
+      background: url(../images/fb_star.png) center center / 100% 100% no-repeat;
+
+      @media (max-width: $sm) {
+        flex-shrink: 0;
+      }
+    }
+  }
+
+  &__name {
+    margin-bottom: 16px;
+    font-size: 22px;
+    font-weight: $font-weight_medium;
+    line-height: 28px;
+
+    @media (max-width: $md) {
+      margin-bottom: 0;
+      font-size: 20px;
+    }
+  }
+
+  &__message {
+    padding-left: 190px;
+
+    @media (max-width: $lg) {
+      padding-left: 0;
+      clear: both;
+      overflow: hidden;
+    }
+
+    &__inner {
+      padding: 18px 40px;
+      background: $white;
+      border-radius: 32px 32px 32px 0;
+      font-weight: $font-weight_regular;
+
+      @media (max-width: $lg) {
+        margin-top: 20px;
+        padding: 20px;
+        border-radius: 0 32px 32px 32px;
+      }
+      @media (max-width: $md) {
+        font-size: 18px;
+        line-height: 28px;
+      }
+      @media (max-width: $sm) {
+        margin-top: 26px;
+        padding: 16px;
+      }
+    }
+  }
+}

@@ -6,9 +6,10 @@ $xl:  1440px;
 body {
 	font-family: $font-family;
 	font-style: normal;
-	font-weight: $font-weight_regular;
+	font-weight: $font-weight_medium;
 	font-size: $font-size;
 	color: $color_text;
+	line-height: $line-height;
 	
 	@media (max-width: $sm) {
 		font-size: $font-size-sm;

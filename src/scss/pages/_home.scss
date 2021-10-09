@@ -1,7 +1,7 @@
 .section {
   margin-top: -40px;
   border-radius: 40px 40px 0 0;
-  background: $bg_section;
+  background-color: $bg_section;
   position: relative;
 
   &__inner {
@@ -21,10 +21,6 @@
 
   //Video Section
   &__video {
-    background-image: url(../images/bg-section.svg);
-    background-size: cover;
-    background-position: center 8px;
-    background-repeat: no-repeat;
 
     h2 {
       margin-bottom: 64px;
@@ -45,7 +41,8 @@
         line-height: 28px;
       }
     }
-    &_block {
+
+    &__block {
       margin: 0 auto;
       padding: 46px 66px 67px;
       max-width: 877px;
@@ -149,7 +146,7 @@
       }
     }
 
-    &_img {
+    &__img {
       flex: 1 1 auto;
       position: relative;
 
@@ -199,7 +196,7 @@
       }
     }
 
-    &_description {
+    &__description {
       flex: 0 0 auto;
       display: flex;
       flex-flow: column nowrap;
@@ -267,6 +264,7 @@
       p {
         margin-bottom: 24px;
         font-size: 24px;
+        font-weight: $font-weight_medium;
         line-height: 36px;
         text-shadow: 0 4px 20px $white, 0 0 10px $white;
 
@@ -305,6 +303,172 @@
         height: 82px;
         top: -50px;
         left: 20px;
+      }
+    }
+
+    &__wrapper {
+      display: flex;
+      align-items: center;
+      position: relative;
+
+      @media (max-width: $md) {
+        margin-top: 20px;
+      }
+    }
+
+    .swiper {
+      margin: 0 56px;
+      position: relative;
+      overflow: hidden;
+
+      @media (max-width: $sm) {
+        margin: 0;
+      }
+
+      &-wrapper {
+        display: flex;
+        width: 100%;
+      }
+
+      &-slide {
+        flex: 0 0 100%;
+      }
+
+      &-button {
+        flex: 0 0 39px;
+        width: 39px;
+        height: 53px;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        cursor: pointer;
+
+        @media (max-width: $sm) {
+          position: absolute;
+          top: 22px;
+          z-index: 1;
+        }
+
+        &.prev {
+          background-image: url(../images/fb_arrow-left.png);
+
+          @media (max-width: $sm) {
+            left: 0;
+          }
+        }
+        &.next {
+          background-image: url(../images/fb_arrow-right.png);
+
+          @media (max-width: $sm) {
+            right: 0;
+          }
+        }
+      }
+    }
+  }
+
+  //Features
+  &__features {
+
+    &__title {
+      margin-bottom: 24px;
+      font-size: 30px;
+      font-weight: $font-weight_bold;
+      line-height: 44px;
+      text-transform: uppercase;
+      text-align: center;
+      letter-spacing: 0.8px;
+
+      @media (max-width: $lg) {
+        margin-bottom: 39px;
+        font-size: 24px;
+      }
+
+      @media (max-width: $md) {
+        margin-bottom: 16px;
+        font-size: 20px;
+        line-height: 28px;
+      }
+    }
+
+    &__wrapper {
+      display: flex;
+      align-items: center;
+
+      @media (max-width: $lg) {
+        flex-direction: column;
+      }
+    }
+
+    &__list {
+      flex: 0 1 100%;
+      max-width: 632px;
+
+      @media (max-width: $lg) {
+        max-width: none;
+        margin-bottom: 12px;
+      }
+
+      li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 32px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        &:before {
+          content: '';
+          flex: 0 0 65px;
+          display: block;
+          margin-right: 30px;
+          width: 65px;
+          min-height: 60px;
+          background-repeat: no-repeat;
+          background-position: center center;
+
+          @media (max-width: $lg) {
+            flex: 0 0 50px;
+            min-height: 52px;
+            background-size: 100% auto;
+          }
+        }
+
+        &.icon-heart:before {
+          background-image: url(../images/ft_heart.png);
+        }
+        &.icon-babyu:before {
+          background-image: url(../images/ft_babyu.png);
+        }
+        &.icon-eye:before {
+          background-image: url(../images/ft_eye.png);
+        }
+        &.icon-rocket:before {
+          background-image: url(../images/ft_rocket.png);
+        }
+        &.icon-clock:before {
+          background-image: url(../images/ft_clock.png);
+        }
+      }
+    }
+
+    &__cat {
+      margin: auto;
+      padding-left: 30px;
+
+      @media (max-width: $lg) {
+        padding-left: 0;
+        max-width: 300px;
+      }
+
+      @media (max-width: $md) {
+        max-width: 210px;
+      }
+
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
       }
     }
   }
