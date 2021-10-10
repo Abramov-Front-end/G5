@@ -1,0 +1,51 @@
+.swiper {
+  margin: 0 56px;
+  position: relative;
+  overflow: hidden;
+
+  @media (max-width: $sm) {
+    margin: 0;
+  }
+
+  &-wrapper {
+    display: flex;
+    width: 100%;
+  }
+
+  &-slide {
+    flex: 0 0 100%;
+    align-self: flex-start;
+  }
+
+  &-button {
+    flex: 0 0 39px;
+    width: 39px;
+    height: 53px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    cursor: pointer;
+
+    @media (max-width: $sm) {
+      position: absolute;
+      top: 22px;
+      z-index: 1;
+    }
+
+    &.prev {
+      @extend .slideLeft;
+      background-image: url(../images/fb_arrow-left.png);
+
+      @media (max-width: $sm) {
+        left: 0;
+      }
+    }
+    &.next {
+      @extend .slideRight;
+      background-image: url(../images/fb_arrow-right.png);
+
+      @media (max-width: $sm) {
+        right: 0;
+      }
+    }
+  }
+}

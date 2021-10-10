@@ -31,9 +31,11 @@
   a {
     color: $white;
     text-decoration: none;
+    transition: color .3s;
     
     &:hover {
       text-decoration: underline;
+      color: #ddd;
     }
   }
 
@@ -86,6 +88,21 @@
       justify-content: space-between;
       align-items: center;
       width: 100%;
+
+      a {
+        display: block;
+        position: relative;
+
+        img {
+          transition: filter .3s;
+        }
+
+        &:hover {
+          img {
+            filter: brightness(85%);
+          }
+        }
+      }
     }
   }
 

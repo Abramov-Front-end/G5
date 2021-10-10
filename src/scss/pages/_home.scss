@@ -73,6 +73,7 @@
       }
 
       &:before {
+        @extend .slideLeft;
         background: url(../images/vb_baloon.png) center center / 100% 100% no-repeat;
 
         $baloon: getRatio(167, 199, 291, 323);
@@ -95,6 +96,7 @@
       }
 
       &:after {
+        @extend .slideRight;
         background: url(../images/vb_cats.png) center center / 100% 100% no-repeat;
 
         $cats: getRatio(185, 201, 243, 259);
@@ -122,6 +124,8 @@
         height: auto;
       }
     }
+
+    $videoSection: &;
   }
 
   //Gif block
@@ -165,6 +169,7 @@
         width: 243px;
         height: 146px;
         background: url(../images/gif_cloud-1.png) center center/100% 100% no-repeat;
+        @extend .slideLeft;
         position: absolute;
         left: -150px;
         top: -27px;
@@ -221,6 +226,7 @@
         width: 332px;
         height: 157px;
         background: url(../images/gif_cloud-2.png) center center/100% 100% no-repeat;
+        @extend .slideRight;
         position: absolute;
         right: -165px;
         top: -35px;
@@ -280,13 +286,17 @@
   &__feedback {
     position: relative;
 
-    &:before {
+    .section__inner {
+      position: static;
+    }
+
+    &__clock {
       content: '';
       display: block;
       width: 133px;
       height: 147px;
       background: url(../images/fb_clock.png) center center/100% 100% no-repeat;
-      transform: rotate(-15deg);
+      @extend .slideLeftWithRotate;
       position: absolute;
       top: -66px;
       left: 59px;
@@ -313,55 +323,6 @@
 
       @media (max-width: $md) {
         margin-top: 20px;
-      }
-    }
-
-    .swiper {
-      margin: 0 56px;
-      position: relative;
-      overflow: hidden;
-
-      @media (max-width: $sm) {
-        margin: 0;
-      }
-
-      &-wrapper {
-        display: flex;
-        width: 100%;
-      }
-
-      &-slide {
-        flex: 0 0 100%;
-      }
-
-      &-button {
-        flex: 0 0 39px;
-        width: 39px;
-        height: 53px;
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
-        cursor: pointer;
-
-        @media (max-width: $sm) {
-          position: absolute;
-          top: 22px;
-          z-index: 1;
-        }
-
-        &.prev {
-          background-image: url(../images/fb_arrow-left.png);
-
-          @media (max-width: $sm) {
-            left: 0;
-          }
-        }
-        &.next {
-          background-image: url(../images/fb_arrow-right.png);
-
-          @media (max-width: $sm) {
-            right: 0;
-          }
-        }
       }
     }
   }

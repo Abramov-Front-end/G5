@@ -92,6 +92,7 @@
     display: block;
     margin-bottom: 100px;
     width: 409px;
+    transform: translate3d(0, -300px, 0);
 
     @media (max-width: $lg){
       margin-bottom: 123px;
@@ -136,6 +137,14 @@
     @media (max-width: $md){
       margin-top: 16px;
       font-size: 24px;
+    }
+  }
+}
+.loaded {
+  .header {
+    &__logo {
+      animation: 1s bounce;
+      transform: translate3d(0, 0, 0);
     }
   }
 }
